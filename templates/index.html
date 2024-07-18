@@ -88,8 +88,8 @@
 				                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
 				                    <li class=" scroll active"><a href="#home">home</a></li>
 				                    <li class="scroll"><a href="#service">service</a></li>
-				                    <li class="scroll"><a href="#featured-cars">featured cars</a></li>
 				                    <li class="scroll"><a href="#new-cars">new cars</a></li>
+									<li class="scroll"><a href="#featured-cars">featured cars</a></li>
 				                    <li class="scroll"><a href="#brand">brands</a></li>
 				                    <li class="scroll"><a href="#contact">contact</a></li>
 				                </ul><!--/.nav -->
@@ -105,10 +105,12 @@
 
 			<div class="container">
 				<div class="welcome-hero-txt">
-					<h2>get your desired car in resonable price</h2>
+					{% for x in home_entry %}
+					<h2>{{ x.title }}</h2>
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore   magna aliqua. 
-					</p>					
+						{{ x.description }}
+					</p>
+					{% endfor %} 					
 				</div>
 			</div>
 		</section><!--/.welcome-hero-->

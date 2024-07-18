@@ -1,8 +1,9 @@
 from django.shortcuts import render
-
+from .models import *
 # Create your views here.
 def Home(request):
-    return render(request, 'index.html')
+    home_entry = Home_page.objects.all()
+    return render(request, 'index.html', {'home_entry': home_entry})
 
 def Contact(request):
     return render(request, 'contact.html')
